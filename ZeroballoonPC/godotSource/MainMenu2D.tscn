@@ -1,0 +1,226 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://MainMenu2D.gd" type="Script" id=1]
+[ext_resource path="res://Versa-Versa.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://gfx/exit.png" type="Texture" id=3]
+[ext_resource path="res://gfx/play.png" type="Texture" id=4]
+[ext_resource path="res://gfx/cup.png" type="Texture" id=5]
+[ext_resource path="res://gfx/info.png" type="Texture" id=6]
+[ext_resource path="res://gfx/achievement_icon.png" type="Texture" id=7]
+[ext_resource path="res://qr.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+outline_size = 3
+font_data = ExtResource( 2 )
+
+[node name="Control" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 60
+custom_constants/margin_top = 40
+custom_constants/margin_left = 60
+custom_constants/margin_bottom = 40
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AbInfoCon" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 60.0
+margin_top = 40.0
+margin_right = 1320.0
+margin_bottom = 984.0
+
+[node name="CenterContainer" type="CenterContainer" parent="AbInfoCon"]
+margin_right = 1260.0
+margin_bottom = 944.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AboutInfo" type="VBoxContainer" parent="AbInfoCon/CenterContainer"]
+margin_left = 96.0
+margin_top = 80.0
+margin_right = 1164.0
+margin_bottom = 863.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="AbInfoCon/CenterContainer/AboutInfo"]
+margin_right = 1068.0
+margin_bottom = 465.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Game made on the road in an old van by filip volf.
+I want to thank my cat, Julie. Thank you for your love and support.
+instagram @two.in.van
+
+MUSIC in the game is BY Swiss music collective ZEROPAGE
+https://soundcloud.com/zeropage
+tracks: IS IT REAL, ELECTRON BREEZE, ELECTRIC CIRCUITS
+
+If you want more cool games like this one 
+please consider donating. it will help a lot!
+thank you so much! 
+you can donate either on itch.io or with bitcoin:"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="AbInfoCon/CenterContainer/AboutInfo"]
+margin_top = 469.0
+margin_right = 1068.0
+margin_bottom = 725.0
+
+[node name="TextureRect" type="TextureRect" parent="AbInfoCon/CenterContainer/AboutInfo/CenterContainer"]
+margin_left = 406.0
+margin_right = 662.0
+margin_bottom = 256.0
+texture = ExtResource( 8 )
+
+[node name="BackButton" type="Button" parent="AbInfoCon/CenterContainer/AboutInfo"]
+margin_top = 729.0
+margin_right = 1068.0
+margin_bottom = 783.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Back"
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 60.0
+margin_top = 40.0
+margin_right = 1320.0
+margin_bottom = 984.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1260.0
+margin_bottom = 312.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer3"]
+margin_left = 284.0
+margin_top = 96.0
+margin_right = 975.0
+margin_bottom = 216.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 3 )
+text = "Zero Balloon"
+align = 1
+valign = 1
+
+[node name="Score" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 316.0
+margin_right = 1260.0
+margin_bottom = 628.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Score" type="Label" parent="VBoxContainer/Score"]
+margin_left = 329.0
+margin_top = 126.0
+margin_right = 893.0
+margin_bottom = 186.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Your highest level is "
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Score"]
+margin_left = 897.0
+margin_top = 126.0
+margin_right = 930.0
+margin_bottom = 186.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Menu" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 632.0
+margin_right = 1260.0
+margin_bottom = 944.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer/Menu"]
+margin_left = 416.0
+margin_right = 556.0
+margin_bottom = 312.0
+icon = ExtResource( 4 )
+flat = true
+
+[node name="Cup" type="Button" parent="VBoxContainer/Menu"]
+visible = false
+margin_left = 238.0
+margin_right = 378.0
+margin_bottom = 164.0
+icon = ExtResource( 5 )
+flat = true
+
+[node name="Achievements" type="Button" parent="VBoxContainer/Menu"]
+visible = false
+margin_left = 310.0
+margin_right = 450.0
+margin_bottom = 164.0
+icon = ExtResource( 7 )
+flat = true
+
+[node name="About" type="Button" parent="VBoxContainer/Menu"]
+margin_left = 560.0
+margin_right = 700.0
+margin_bottom = 312.0
+icon = ExtResource( 6 )
+flat = true
+
+[node name="Exit" type="Button" parent="VBoxContainer/Menu"]
+margin_left = 704.0
+margin_right = 844.0
+margin_bottom = 312.0
+icon = ExtResource( 3 )
+flat = true
+[connection signal="button_down" from="AbInfoCon/CenterContainer/AboutInfo/BackButton" to="." method="_on_back_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/Play" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/Cup" to="." method="_on_Cup_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/Achievements" to="." method="_on_Achievements_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/About" to="." method="_on_About_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/Exit" to="." method="_on_Exit_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/Exit" to="." method="_on_Button_button_down"]

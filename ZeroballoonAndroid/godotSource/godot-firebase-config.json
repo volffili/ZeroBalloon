@@ -1,0 +1,32 @@
+{
+	"AdMob" : false,
+	"Authentication" : false,
+	"RemoteConfig" : false,
+	"Notification" : false,
+	"Storage" : false,
+	"Firestore" : false,
+
+	"AuthConf" : 
+	{
+		"Google" : false,
+		"Twitter" : false,
+		"Facebook" : false,
+		"FacebookAppId" : "1234566789875"
+	},
+
+	"Ads" : 
+	{
+		"AppId": "YOUR_APP_ID_HERE",
+		"BannerAd" : false,
+		"BannerGravity" : "BOTTOM",
+		"BannerAdId" : "",
+
+		"InterstitialAd" : false,
+		"InterstitialAdId" : "",
+
+		"RewardedVideoAd" : false,
+		"RewardedVideoAdId" : "",
+
+        "TestAds" : false
+	}
+}

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://items/item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/itemwater.gd" type="Script" id=2]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="SpatialMaterial" id=2]
+resource_local_to_scene = true
+render_priority = 127
+flags_transparent = true
+flags_unshaded = true
+params_billboard_mode = 1
+params_billboard_keep_scale = true
+albedo_texture = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Versa-Versa.otf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+outline_size = 3
+outline_color = Color( 0.490196, 0.976471, 1, 1 )
+font_data = SubResource( 3 )
+
+[node name="ItemZero" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+material/0 = SubResource( 2 )
+
+[node name="Viewport" type="Viewport" parent="." index="2"]
+size = Vector2( 60, 60 )
+transparent_bg = true
+usage = 0
+render_target_v_flip = true
+
+[node name="Label" type="Label" parent="Viewport" index="0"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1

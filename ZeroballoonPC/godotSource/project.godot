@@ -1,0 +1,67 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "Item",
+"language": "GDScript",
+"path": "res://items/item.gd"
+}, {
+"base": "Item",
+"class": "ItemOperator",
+"language": "GDScript",
+"path": "res://items/itemoperator.gd"
+}, {
+"base": "Item",
+"class": "ItemWater",
+"language": "GDScript",
+"path": "res://items/itemwater.gd"
+} ]
+_global_script_class_icons={
+"Item": "",
+"ItemOperator": "",
+"ItemWater": ""
+}
+
+[android]
+
+modules="org/godotengine/godot/GooglePlay"
+
+[application]
+
+config/name="Zeroballoon"
+run/main_scene="res://main.tscn"
+boot_splash/image="res://gfx/loading.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://gfx/icon.png"
+config/windows_native_icon="res://gfx/icon.ico"
+
+[display]
+
+window/size/width=1280
+window/size/height=1024
+window/size/resizable=false
+window/size/fullscreen=true
+mouse_cursor/custom_image="res://gfx/cursor.png"
+
+[input]
+
+touch={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[rendering]
+
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+modules="org/godotengine/godot/FireBase,org/godotengine/godot/SQLBridge,org/godotengine/godot/GooglePlay"

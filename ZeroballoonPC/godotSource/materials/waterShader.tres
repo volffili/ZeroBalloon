@@ -1,0 +1,47 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+
+uniform float spectral;
+
+uniform vec4 out_color : hint_color = vec4(0.0,0.2,1.0,1.0);
+uniform float amount : hint_range(0.01,2.0) = 0.05;
+uniform float beer_factor = 100;
+
+float gen_offset(float x, float z, float val1, float val2, float time){
+	float radX = ((mod(x+z*x*val1,amount)/amount)+time*mod(x*0.8+z,1.5)) * 2.0 * 3.14;
+	float radZ = ((mod(z*x*val2,amount)/amount)+time*2.0*mod(x,2.0)) * 2.0 * 3.14;
+	return amount*0.5*(sin(radZ) + cos(radX));
+}
+
+vec3 distort(vec3 vec,float time){
+	float x = gen_offset(vec.x, vec.z, 0.2, 0.2, time);
+	float y = gen_offset(vec.x, vec.z, 0.1, 0.6, time);
+	float z = gen_offset(vec.x, vec.z, 0.15, 0.4, time);
+	return vec + vec3(x,y,z)*spectral;
+}
+
+void vertex(){
+	VERTEX = distort(VERTEX,TIME*0.1);	
+}
+
+void fragment(){
+	NORMAL = normalize(cross(dFdx(VERTEX),dFdy(VERTEX)));
+	float depth = texture(DEPTH_TEXTURE,SCREEN_UV).r;
+	
+	depth = depth*2.0-1.0;
+	depth = PROJECTION_MATRIX[3][2] / (depth + PROJECTION_MATRIX[2][2]);
+	depth = depth + VERTEX.z;
+	
+	depth = exp(-depth*beer_factor);
+	ALPHA = clamp(1.0-depth,0.0,1.0);
+	ALBEDO = out_color.xyz;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/spectral = null
+shader_param/out_color = Color( 0.541176, 0.168627, 0.886275, 1 )
+shader_param/amount = 0.05
+shader_param/beer_factor = 100.0

@@ -1,0 +1,214 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://MainMenu2D.gd" type="Script" id=1]
+[ext_resource path="res://Versa-Versa.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://gfx/exit.png" type="Texture" id=3]
+[ext_resource path="res://gfx/play.png" type="Texture" id=4]
+[ext_resource path="res://gfx/cup.png" type="Texture" id=5]
+[ext_resource path="res://gfx/info.png" type="Texture" id=6]
+[ext_resource path="res://gfx/achievement_icon.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+outline_size = 3
+font_data = ExtResource( 2 )
+
+[node name="Control" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 60
+custom_constants/margin_top = 40
+custom_constants/margin_left = 60
+custom_constants/margin_bottom = 40
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AbInfoCon" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 60.0
+margin_top = 40.0
+margin_right = 964.0
+margin_bottom = 539.0
+
+[node name="CenterContainer" type="CenterContainer" parent="AbInfoCon"]
+margin_right = 904.0
+margin_bottom = 499.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AboutInfo" type="VBoxContainer" parent="AbInfoCon/CenterContainer"]
+margin_left = 94.0
+margin_right = 810.0
+margin_bottom = 499.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="AbInfoCon/CenterContainer/AboutInfo"]
+margin_right = 716.0
+margin_bottom = 445.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Game made by Filip Volf
+I want to thank my cat, Julie. 
+Thank you for your love and support.
+
+MUSIC:
+reNovation by airtone (c) 2019
+http://dig.ccmixter.org/files/airtone/60674 
+
+commonGround by airtone (c) copyright 2018
+ http://dig.ccmixter.org/files/airtone/58703
+
+Drops of H2O ( The Filtered Water Treatment ) 
+by J.Lang (c) copyright 2012
+http://dig.ccmixter.org/files/djlang59/37792 Ft: Airtone"
+align = 1
+valign = 1
+
+[node name="BackButton" type="Button" parent="AbInfoCon/CenterContainer/AboutInfo"]
+margin_top = 449.0
+margin_right = 716.0
+margin_bottom = 499.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Back"
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 60.0
+margin_top = 40.0
+margin_right = 964.0
+margin_bottom = 536.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 904.0
+margin_bottom = 162.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer3"]
+margin_left = 106.0
+margin_top = 21.0
+margin_right = 797.0
+margin_bottom = 141.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 3 )
+text = "Zero Balloon"
+align = 1
+valign = 1
+
+[node name="Score" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 166.0
+margin_right = 904.0
+margin_bottom = 328.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Score" type="Label" parent="VBoxContainer/Score"]
+margin_left = 151.0
+margin_top = 51.0
+margin_right = 715.0
+margin_bottom = 111.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Your highest level is "
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Score"]
+margin_left = 719.0
+margin_top = 51.0
+margin_right = 752.0
+margin_bottom = 111.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Menu" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 332.0
+margin_right = 904.0
+margin_bottom = 496.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer/Menu"]
+margin_left = 166.0
+margin_right = 306.0
+margin_bottom = 164.0
+icon = ExtResource( 4 )
+flat = true
+
+[node name="Cup" type="Button" parent="VBoxContainer/Menu"]
+margin_left = 310.0
+margin_right = 450.0
+margin_bottom = 164.0
+icon = ExtResource( 5 )
+flat = true
+
+[node name="Achievements" type="Button" parent="VBoxContainer/Menu"]
+visible = false
+margin_left = 382.0
+margin_right = 522.0
+margin_bottom = 164.0
+icon = ExtResource( 7 )
+flat = true
+
+[node name="About" type="Button" parent="VBoxContainer/Menu"]
+margin_left = 454.0
+margin_right = 594.0
+margin_bottom = 164.0
+icon = ExtResource( 6 )
+flat = true
+
+[node name="Exit" type="Button" parent="VBoxContainer/Menu"]
+margin_left = 598.0
+margin_right = 738.0
+margin_bottom = 164.0
+icon = ExtResource( 3 )
+flat = true
+[connection signal="button_down" from="AbInfoCon/CenterContainer/AboutInfo/BackButton" to="." method="_on_back_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/Play" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/Cup" to="." method="_on_Cup_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/Achievements" to="." method="_on_Achievements_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/About" to="." method="_on_About_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/Exit" to="." method="_on_Exit_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu/Exit" to="." method="_on_Button_button_down"]

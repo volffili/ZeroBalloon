@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/zeropage_-_a_slice_of_time.ogg-ff5c2cf9405b15d0c4daff9675e8b7f1.oggstr"
+
+[deps]
+
+source_file="res://music/zeropage_-_a_slice_of_time.ogg"
+dest_files=[ "res://.import/zeropage_-_a_slice_of_time.ogg-ff5c2cf9405b15d0c4daff9675e8b7f1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
